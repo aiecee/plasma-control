@@ -63,6 +63,11 @@
                   version = "6.3.11";
                   sha256 = "sha256-x7dpPoe8s1SbxkOUgiwKDyhGxKB2dIxmBZUgMA7GjOs=";
                 };
+                circuitpython-types = adafruitPackage {
+                  pname = "adafruit-circuitpython-typing";
+                  version = "1.10.2";
+                  sha256 = "sha256-7Puq56wPQbICqj7ZjL0PaWsX6Dt+fz+sbcaiKMvBxsY=";
+                };
               in
               [
                 # editor packages
@@ -75,6 +80,7 @@
                 asyncio
                 httpserver
                 neopixel
+                circuitpython-types
               ]))
             ];
         };

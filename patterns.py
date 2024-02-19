@@ -1,6 +1,5 @@
 import time
 from rainbowio import colorwheel
-import math
 import random
 
 
