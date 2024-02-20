@@ -1,0 +1,12 @@
+{% exec current_brightness = context.get("current_brightness") %}
+
+<section id="brightness">
+  <h2>Control</h2>
+  <form hx-post="/brightness" hx-target="#brightness" hx-swap="outerHTML">
+    <p>
+      <label for="brightness">Brightness</label>
+      <input type="number" name="brightness" value="{{ current_brightness }}" min="1" max="10" step="1" />
+    </p>
+    <button type="submit">Set</button>
+  </form>
+</section>

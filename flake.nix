@@ -23,6 +23,8 @@
           packages = with pkgs;
             [
               ruff
+              circup
+              screen
               # python packages
               (python311.withPackages (ps: with ps;
               let
@@ -63,6 +65,11 @@
                   version = "6.3.11";
                   sha256 = "sha256-x7dpPoe8s1SbxkOUgiwKDyhGxKB2dIxmBZUgMA7GjOs=";
                 };
+                templateengine = adafruitPackage {
+                  pname = "adafruit-circuitpython-templateengine";
+                  version = "1.1.0";
+                  sha256 = "sha256-6p/tKUOOcDsW0OFNPekAH4qRhzdHqJHZ07Ip/sRgqOA=";
+                };
                 circuitpython-types = adafruitPackage {
                   pname = "adafruit-circuitpython-typing";
                   version = "1.10.2";
@@ -80,6 +87,7 @@
                 asyncio
                 httpserver
                 neopixel
+                templateengine
                 circuitpython-types
               ]))
             ];

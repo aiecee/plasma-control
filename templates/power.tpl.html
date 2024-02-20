@@ -1,0 +1,19 @@
+{% exec power_state = context.get("power_state") %}
+
+<section id="power">
+  <h2>Power</h2>
+  <form hx-post="/power" hx-target="#main" hx-swap="innerHTML show:window:top">
+    {% if power_state %}
+    <button type="submit" name="state" value="on" disabled>On</button>
+    <button type="submit" name="state" value="off">Off</button>
+    {% else %}
+    <button type="submit" name="state" value="on">On</button>
+    <button type="submit" name="state" value="off" disabled>Off</button>
+    {% endif %}
+  </form>
+</section>
+
+{% if power_state %}
+{% include "./templates/brightness.tpl.html" %}
+{% include "./templates/patterns.tpl.html" %}
+{% endif %}
